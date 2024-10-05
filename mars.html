@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARS CHART</title>
+    <script src="mars.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="mars.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="navigation">
+            <a target="_blank" href="https://www.nasa.gov/">
+                <h3>NASA</h3>
+            </a>
+            <a target="_blank" href="mars.html">
+                <h3>Mars</h3>
+            </a>
+            <a target="_blank" href="index.html">
+                <h3>APOD</h3>
+            </a>
+        </div>
+    </header>
+
+    <div class="title-texts">
+        <h1>MARS <span>TEMP</span></h1>
+        <h2>A Martian temperature chart</h2>
+    </div>
+    <div class="background-shape"></div>
+    <div>
+        <canvas id="myChart"></canvas>
+        <canvas id="midChart"></canvas>
+    </div>
+    <footer>
+        <p class="footer-text">Image and Video Credit & Copyright: NASA</p>
+    </footer>
+</body>
+
+</html>

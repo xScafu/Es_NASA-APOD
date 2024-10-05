@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --backgroundColor: #e9f0ff;
+  --elementColor1: black;
+  --shadowColor: #8593b1;
+  --backgroundShapeColor1: #d7e8ff;
+  --backgroundFooter: #ff3030;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#toggleButton {
+  color: #8593b1;
+}
+
+@media screen and (min-width: 320px) {
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  body {
+    background-color: var(--backgroundColor);
+  }
+
+  footer {
+    background-color: var(--backgroundFooter);
+    height: 2rem;
+    color: white;
+    text-align: end;
+    padding: 1rem;
+  }
+
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .header {
+    background-color: var(--elementColor1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 5rem;
+    color: white;
+  }
+
+  .navigation {
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .navigation h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+
+  .navigation h3:hover {
+    text-shadow: 0.1rem 0.1rem 0.5rem var(--backgroundFooter),
+      -0.1rem -0.1rem 0.5rem var(--backgroundFooter);
+  }
+
+  .main-photo {
+    background-color: white;
+    max-width: 80%;
+    margin: 2rem auto 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem var(--shadowColor);
+  }
+
+  .photo-description {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .background-shape {
+    position: absolute;
+    width: 65rem;
+    height: 65rem;
+    background: var(--backgroundShapeColor1);
+    border-radius: 50%;
+    top: 190px;
+    left: -755px;
+    z-index: -1;
+  }
+
+  .title-texts {
+    margin-top: 1rem;
+  }
+
+  .title-texts h1 {
+    margin: 0px 1rem;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3.8rem;
+  }
+
+  .title-texts span {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.8rem;
+  }
+
+  .title-texts h2 {
+    margin: -1rem 0 0 1rem;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1.26rem;
+  }
+
+  .photo-gallery-header {
+    background-color: var(--elementColor1);
+    color: var(--backgroundColor);
+    margin-top: 6rem;
+    height: 4rem;
+    padding: 1rem 0 0;
+  }
+
+  .photo-gallery-header h2 {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-left: 1rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .gallery-button {
+    height: 17.5rem;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  .gallery-button img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-button img:active {
+    opacity: 40%;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
+
+  #apod-image {
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin: auto;
+  }
+
+  #apod-video {
+    max-width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+    display: block;
+    margin: auto;
+  }
+
+  /* MODAL WINDOW */
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 1rem;
+    display: block;
+    max-width: 80%;
+    border-radius: 1rem;
+    box-shadow: 0 0 1.3rem black;
+  }
+
+  .modal-content img {
+    width: 80%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  .modal-content iframe {
+    width: 100%;
+    height: 35rem;
+    display: block;
+    margin: auto;
+  }
+
+  .close,
+  .prev,
+  .next {
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 0.3rem black;
+    font-size: 2rem;
+    font-weight: bold;
+    transition: 0.3s;
+    -webkit-user-select: none;
+  }
+
+  .close {
+    top: 125px;
+    right: 10px;
+    padding: 1rem;
+  }
+
+  .prev {
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    padding: 1rem;
+  }
+
+  .next {
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    padding: 1rem;
+  }
+
+  .close:hover,
+  .prev:hover,
+  .next:hover {
+    color: #bbb;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .title-texts h1 {
+    font-size: 7.8rem;
+  }
+
+  .title-texts span {
+    font-size: 3.8rem;
+  }
+
+  .title-texts h2 {
+    font-size: 2.6rem;
+  }
+
+  .main-photo {
+    margin: 15rem auto 0;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .close,
+  .prev,
+  .next {
+    position: absolute;
+    color: white;
+    font-size: 5rem;
+    font-weight: bold;
+    transition: 0.3s;
+    -webkit-user-select: none;
+  }
+
+  .close {
+    top: 10px;
+    right: 25px;
+    padding: 1rem;
+  }
+
+  .prev {
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    padding: 1rem;
+  }
+
+  .next {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .background-shape {
+    position: absolute;
+    width: 100rem;
+    height: 100rem;
+    background: var(--backgroundShapeColor1);
+    border-radius: 50%;
+    top: 190px;
+    left: -755px;
+    z-index: -1;
+  }
+
+  .navigation h3 {
+    font-size: 1.5rem;
+  }
+
+  .navigation {
+    gap: 0;
+  }
+
+  .main-photo {
+    background-color: white;
+    max-width: 80%;
+    margin: 12rem auto 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem var(--shadowColor);
+  }
+
+  .photo-description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .title-texts h1 {
+    margin: 0 0 0 3rem;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 9.8rem;
+  }
+
+  .title-texts span {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 5.8rem;
+  }
+
+  .title-texts h2 {
+    margin: -2rem 0 0 3rem;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 3.5rem;
+  }
+
+  .photo-gallery-header h2 {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-left: 3rem;
+  }
+
+  .gallery-button {
+    height: 25rem;
+    overflow: hidden;
+    background-color: black;
+  }
+
+  #apod-image {
+    max-width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin: auto;
+  }
+}

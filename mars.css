@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --backgroundColor: #ffede9;
+  --elementColor1: black;
+  --shadowColor: #8593b1;
+  --backgroundShapeColor1: #ffdfd7;
+  --backgroundFooter: #ff3030;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#toggleButton {
+  color: #8593b1;
+}
+
+@media screen and (min-width: 320px) {
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  body {
+    background-color: var(--backgroundColor);
+  }
+
+  footer {
+    background-color: var(--backgroundFooter);
+    height: 2rem;
+    color: white;
+    text-align: end;
+    padding: 1rem;
+  }
+
+  .header {
+    background-color: var(--elementColor1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 5rem;
+    color: white;
+  }
+
+  .navigation {
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .navigation h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
+
+  .navigation h3:hover {
+    text-shadow: 0.1rem 0.1rem 0.5rem var(--backgroundFooter),
+      -0.1rem -0.1rem 0.5rem var(--backgroundFooter);
+  }
+
+  .background-shape {
+    position: absolute;
+    width: 65rem;
+    height: 65rem;
+    background: var(--backgroundShapeColor1);
+    border-radius: 50%;
+    top: 190px;
+    left: -755px;
+    z-index: -1;
+  }
+
+  .title-texts {
+    margin-top: 1rem;
+  }
+
+  .title-texts h1 {
+    margin: 0px 1rem;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3.8rem;
+  }
+
+  .title-texts span {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.8rem;
+  }
+
+  .title-texts h2 {
+    margin: -1rem 0 0 1rem;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1.26rem;
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 720px) {
+  .title-texts h1 {
+    font-size: 7.8rem;
+  }
+
+  .title-texts span {
+    font-size: 3.8rem;
+  }
+
+  .title-texts h2 {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .background-shape {
+    position: absolute;
+    width: 100rem;
+    height: 100rem;
+    background: var(--backgroundShapeColor1);
+    border-radius: 50%;
+    top: 190px;
+    left: -755px;
+    z-index: -1;
+  }
+
+  .navigation h3 {
+    font-size: 1.5rem;
+  }
+
+  .navigation {
+    gap: 0;
+  }
+
+  .title-texts h1 {
+    margin: 0 0 0 3rem;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 9.8rem;
+  }
+
+  .title-texts span {
+    font-weight: 300;
+    font-style: normal;
+    font-size: 5.8rem;
+  }
+
+  .title-texts h2 {
+    margin: -2rem 0 0 3rem;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 3.5rem;
+  }
+}
